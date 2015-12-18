@@ -16,7 +16,8 @@ def get_ssh_conn():
 
 if __name__ == '__main__':
     try:
-        ssh_conn = get_ssh_conn()
+        if args.deluged is not None and args.samba is not None and args.system is not None:
+            ssh_conn = get_ssh_conn()
 
         if args.deluged is not None:
             if args.deluged in help:
