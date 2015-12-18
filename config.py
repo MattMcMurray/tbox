@@ -2,7 +2,7 @@ import json
 import os
 from pprint import pprint
 
-filename= os.path.dirname(os.path.realpath(__file__)) + 'config.json'
+filename= os.path.dirname(os.path.realpath(__file__)) + '/config.json'
 
 config = None
 
