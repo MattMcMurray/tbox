@@ -74,5 +74,13 @@ if __name__ == '__main__':
                 print '\t shutdown -- halt and shutdown the pi'
                 print '\t reboot   -- reboot the system\n'
 
+            elif args.samba == 'shutdown':
+            	ssh_conn.exec_cmd('sudo shutdown -h now')
+            	ssh_conn.close()
+
+            elif args.samba == 'restart':
+            	ssh_conn.exec_cmd('sudo reboot')
+            	ssh_conn.close()
+
     except socket.timeout:
         print 'Socket timed out; try again'
