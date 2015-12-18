@@ -15,7 +15,3 @@ def getSSH():
 	return config['ssh']
 	if config is not None and 'ssh' in config:
 		return config['ssh']
-
-if __name__ == '__main__':
-	pprint(getSSH())
-
