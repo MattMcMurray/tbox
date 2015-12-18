@@ -1,0 +1,7 @@
+{
+	"ssh": {
+		"host": "xxx.xxx.x.x",
+		"username": "ssh_host_username",
+		"password": "hunter2"
+	}
+}
