@@ -1,3 +1,4 @@
+```
 usage: parser.py [-h] [--deluged DELUGED] [--samba SAMBA] [--system SYSTEM]
                  {deluged,samba,system} ...
 
@@ -15,3 +16,4 @@ optional arguments:
   --deluged DELUGED     Issue a command to the deluge daemon
   --samba SAMBA         Issue a command to the samba service
   --system SYSTEM       Issue a command to the operating system
+```
