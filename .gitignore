@@ -1,0 +1,9 @@
+*.pyc
+
+venv/
+config.json
+
+
+### Place files w/ keys in here until they are scrubbed ###
+
+###########################################################
