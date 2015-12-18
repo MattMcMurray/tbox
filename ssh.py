@@ -2,17 +2,26 @@ import paramiko
 import base64
 import config
 
-ssh_creds = config.getSSH()
 
-ssh_client = paramiko.SSHClient()
-ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+class SSH:
 
-# TODO grab from config file
-ssh_client.connect(ssh_creds['host'], username=ssh_creds['username'],
-                   password=ssh_creds['password'])
-stdin, stdout, stderr = ssh_client.exec_command('ls /media')
+    def __init__(self):
+        self.ssh_creds = config.getSSH()
+        self.ssh_client = None
 
-for line in stdout:
-    print '...' + line.strip('\n')
+    def open(self):
+        self.ssh_client = paramiko.SSHClient()
+        self.ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-ssh_client.close()
+        # TODO grab from config file
+        self.ssh_client.connect(self.ssh_creds['host'], username=self.ssh_creds['username'],
+                                password=self.ssh_creds['password'])
+
+    def exec_cmd(self, command):
+        stdin, stdout, stderr = self.ssh_client.exec_command(command, timeout=10)
+
+        for line in stdout:
+            print '...' + line.strip('\n')
+
+    def close(self):
+        self.ssh_client.close()
