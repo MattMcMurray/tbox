@@ -1,3 +1,6 @@
+## MAKE SURE TO CHANGE TO PROPER VIRTUALENV
+#!/bin/python
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -8,4 +11,4 @@ def index():
 
 if __name__ == '__main__':
 	app.debug = True
-	app.run()
+	app.run(host='0.0.0.0')

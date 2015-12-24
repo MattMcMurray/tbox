@@ -1,5 +1,17 @@
 {%  extends "base.html" %}
-
 {% block content %}
-    <a class="waves-effect waves-light btn">Stuff number 2</a>
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Deluge</div>
+      <div class="collapsible-body">{% include 'deluge.html' %} </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">settings_input_antenna</i>Samba</div>
+      <div class="collapsible-body">{% include 'samba.html' %}</div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">settings_power</i>System</div>
+      <div class="collapsible-body">{% include 'system.html' %}</div>
+    </li>
+  </ul>
 {% endblock %}
