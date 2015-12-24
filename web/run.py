@@ -23,27 +23,22 @@ def api_start(service):
 	data = {
 	}
 
-	print service
 	if service == 'samba':
 		cmd = 'sudo service samba start'
 		data['cmd'] = cmd
-		print 'Issuing command'
 		run_command(cmd)
 		status = 200
 	elif service == 'deluge':
 		cmd = 'sudo deluged'
 		data['cmd'] = cmd
-		print 'Issuing command'
 		run_command(cmd)
 		status = 200
 	else:
 		data['error'] = "No service {0}".format(service)
 
-	print 'building response'
 	js = json.dumps(data)
 	resp = Response(js, status=status, mimetype='application/json')
 
-	print 'sending response'
 	return resp
 
 @app.route('/api/stop/<service>', methods=['POST'])
@@ -52,7 +47,6 @@ def api_stop(service):
 	data = {
 	}
 
-	print service
 	if service == 'samba':
 		cmd = 'sudo service samba stop'
 		data['cmd'] = cmd
